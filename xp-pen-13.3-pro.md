@@ -87,6 +87,12 @@ Dial (Only 1 dial)
 - Stop Rotate
   - `02:f0:00:00:00:00:00:00:00:00:00:00`
 
+## Byte Descriptions
+- Total bytes: 12
+- Total bits: 96
+- Total bytes with interface removed: 11
+- Total bits with interface removed: 88
+
 # Pen/Digitizer
 ## Report Descriptor - Interface 1
 ```
