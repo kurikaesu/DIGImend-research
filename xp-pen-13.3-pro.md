@@ -31,17 +31,27 @@
 ## USB Packets - Interface ?
 Regular buttons (From the top, skipping dial)
 - 1
+  - `06:00:05:00:00:00:00:00`
 - 2
+  - `06:00:08:00:00:00:00:00`
 - 3
+  - `06:04:00:00:00:00:00:00`
 - 4
+  - `06:00:2C:00:00:00:00:00`
 - 5
+  - `06:00:19:00:00:00:00:00`
 - 6
+  - `06:01:16:00:00:00:00:00`
 - 7
+  - `06:01:1D:00:00:00:00:00`
 - 8
+  - `06:05:11:00:00:00:00:00`
 
 Dial (Only 1 dial)
 - Left rotate
+  - `06:01:56:00:00:00:00:00`
 - Right rotate
+  - `06:01:57:00:00:00:00:00`
 
 ## Report Descriptor - Interface 2 with "Key"
 ```
@@ -137,15 +147,29 @@ Dial (Only 1 dial)
 
 ## USB Packets - Interface 1
 - Hover - Top Left Corner
+  - `07:A0:00:00:00:00:00:00:00:00` 
 - Hover - Bottom Right Corner
+  - `07:A0:FF:7F:FF:7F:00:00:00:00`
+- Hover Center - Button Closest to tip
+  - `07:A2:B3:38:B6:44:00:00:00:04`
+- Hover Center - Button Furthest from tip
+  - `07:A4:04:3D:92:40:00:00:00:02`
 - Tap - Top Left Corner
+  - `07:A1:00:00:00:00:FF:06:00:00`
 - Tap - Bottom Right Corner
+  - `07:A1:FF:7F:FF:7F:46:0B:00:00`
 - Tap Center - Tilt Up
+  - `07:A1:56:3E:21:45:C4:0A:10:D3`
 - Tap Center - Tilt Down
+  - `07:A1:7E:3D:9E:44:45:09:0E:36`
 - Tap Center - Tilt Left
+  - `07:A1:3A:3E:88:44:7F:0B:D0:11`
 - Tap Center - Tilt Right
+  - `07:A1:B4:3E:78:41:4F:0F:37:10`
 - Tap Center - Button Closest to tip
+  - `07:A3:7C:37:62:46:A1:04:0B:0C` 
 - Tap Center - Button Furthest from tip
+  - `07:A5:6B:3B:C4:47:71:00:FA:F5`
 
 ## Report Descriptor - Interface 2 with "Key"
 ```
