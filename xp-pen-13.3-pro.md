@@ -181,6 +181,10 @@ Dial (Only 1 dial)
   - `02:a0:93:00:00:00:00:00:00:00:00:00`
 - Hover - Bottom Right Corner
   - `02:a0:14:72:80:f3:00:00:00:00:00:00`
+- Hover Center - Button Closest to tip
+  - `02:A2:EA:33:06:1D:00:00:00:0E:00:00`
+- Hover Center - Button Furthest from tip
+  - `02:A4:B2:32:37:1F:00:00:08:0B:00:00`
 - Tap - Top Left Corner
   - `02:a1:c9:00:a1:00:3d:1b:00:00:00:00`
 - Tap - Bottom Right Corner
