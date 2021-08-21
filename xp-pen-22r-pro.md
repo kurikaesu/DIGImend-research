@@ -304,18 +304,32 @@ const __u8 uclogic_rdesc_xppen_artist_22r_pro_special_tablet_arr[] = {
 
 ## USB Packets - Interface 2 with "Key"
 - Hover - Top Left Corner
+  - `02:A0:00:00:00:00:00:00:00:00`
 - Hover - Bottom Right Corner
+  - `02:A0:30:BA:9A:68:00:00:00:00`
+- Hover Center - Button Closest to tip
+  - `02:A2:B5:55:3A:32:00:00:00:00`
+- Hover Center - Button Furthest from tip
+  - `02:A4:7F:56:AC:2E:00:00:00:00` 
 - Tap - Top Left Corner
+  - `02:A1:34:00:35:00:9E:06:00:00`
 - Tap - Bottom Right Corner
+  - `02:A1:A8:B9:74:68:61:11:00:00`
 - Tap Center - Tilt Up
+  - `02:A1:A8:5B:B3:34:73:1A:F9:C3` 
 - Tap Center - Tilt Down
+  - `02:A1:80:58:6F:33:DE:10:06:37`
 - Tap Center - Tilt Left
+  - `02:A1:F4:55:98:31:93:10:C3:0B`
 - Tap Center - Tilt Right
+  - `02:A1:08:5B:7B:37:FA:12:3B:EF`
 - Tap Center - Button Closest to tip
+  - `02:A3:F9:58:EC:38:77:10:07:F3` 
 - Tap Center - Button Furthest from tip
+  - `02:A5:10:57:6D:39:1C:0B:00:F4`
 
 ## Byte Descriptions
-- Total bytes: 
-- Total bits: 
-- Total bytes with interface removed:
-- Total bits with interface removed:
+- Total bytes: 10
+- Total bits: 80
+- Total bytes with interface removed: 9
+- Total bits with interface removed: 72
