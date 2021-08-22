@@ -1,7 +1,12 @@
 # Device details
+## 13.3 Pro
 - VendorID: `0x28bd`
 - Device ID: `0x092b`
 - Product page: https://www.xp-pen.com/product/464.html
+## 12 Pro
+- VendorID: `0x28bd`
+- Device ID: `0x091f`
+- Product page: https://www.xp-pen.com/product/479.html
 
 # Frame / Express keys (and dial)
 ## Report Descriptor - Interface 0
@@ -55,7 +60,36 @@ Dial (Only 1 dial)
 
 ## Report Descriptor - Interface 2 with "Key"
 ```
-
+const __u8 uclogic_rdesc_xppen_artist_133_pro_frame_arr[] = {
+    0x05, 0x01,         /*  Usage Page (Desktop),                 */
+    0x09, 0x07,         /*  Usage (Keypad),                       */
+    0xA1, 0x01,         /*  Collection (Application),             */
+    0x85, UCLOGIC_RDESC_V1_FRAME_ID,
+                        /*      Report ID (Virtual report),       */
+    0x05, 0x0D,         /*     Usage Page (Digitizer),            */
+    0x09, 0x39,         /*      Usage (Tablet Function Keys),     */
+    0xA0,               /*      Collection (Physical),            */
+    0x14,               /*          Logical Minimum (0),          */
+    0x25, 0x01,         /*          Logical Maximum (1),          */
+    0x75, 0x01,         /*          Report Size (1),              */
+    0x95, 0x08,         /*          Report Count (8),             */
+    0x81, 0x01,         /*          Input (Constant),             */
+    0x05, 0x09,         /*          Usage Page (Button),          */
+    0x19, 0x01,         /*          Usage Minimum (01h),          */
+    0x29, 0x08,         /*          Usage Maximum (08h),          */
+    0x95, 0x08,         /*          Report Count (8),             */
+    0x81, 0x02,         /*          Input (Variable),             */
+    0x95, 0x20,         /*          Report Count (32),            */
+    0x81, 0x01,         /*          Input (Constant),             */
+    0x19, 0x09,         /*          Usage Minimum (09h),          */
+    0x29, 0x0A,         /*          Usage Maximum (0Ah),          */
+    0x95, 0x02,         /*          Report Count (2),             */
+    0x81, 0x02,         /*          Input (Variable),             */
+    0x95, 0x26,         /*          Report Count (38),            */
+    0x81, 0x01,         /*          Input (Constant),             */
+    0xC0,               /*      End Collection,                   */
+    0xC0                /*  End Collection                        */
+};
 ```
 
 ## USB Packets - Interface 2 with "Key"
@@ -179,7 +213,71 @@ Dial (Only 1 dial)
 
 ## Report Descriptor - Interface 2 with "Key"
 ```
-
+const __u8 uclogic_rdesc_xppen_pro_stylus_type2_arr[] = {
+	0x05, 0x0D,         /*  Usage Page (Digitizer),                 */
+	0x09, 0x02,         /*  Usage (Pen),                            */
+	0xA1, 0x01,         /*  Collection (Application),               */
+	0x85, 0x02,         /*      Report ID (2),                      */
+	0x09, 0x20,         /*      Usage (Stylus),                     */
+	0xA0,               /*      Collection (Physical),              */
+	0x14,               /*          Logical Minimum (0),            */
+	0x25, 0x01,         /*          Logical Maximum (1),            */
+	0x09, 0x42,         /*          Usage (Tip Switch),             */
+	0x09, 0x44,         /*          Usage (Barrel Switch),          */
+	0x09, 0x46,         /*          Usage (Tablet Pick),            */
+	0x75, 0x01,         /*          Report Size (1),                */
+	0x95, 0x03,         /*          Report Count (3),               */
+	0x81, 0x02,         /*          Input (Variable),               */
+	0x95, 0x02,         /*          Report Count (2),               */
+	0x81, 0x01,         /*          Input (Constant),               */
+	0x09, 0x32,         /*          Usage (In Range),               */
+	0x95, 0x01,         /*          Report Count (1),               */
+	0x81, 0x02,         /*          Input (Variable),               */
+	0x95, 0x02,         /*          Report Count (2),               */
+	0x81, 0x01,         /*          Input (Constant),               */
+	0x75, 0x10,         /*          Report Size (16),               */
+	0x95, 0x01,         /*          Report Count (1),               */
+	0xA4,               /*          Push,                           */
+	0x05, 0x01,         /*          Usage Page (Desktop),           */
+	0x55, 0xFD,         /*          Unit Exponent (-3),             */
+	0x65, 0x13,         /*          Unit (Inch),                    */
+	0x34,               /*          Physical Minimum (0),           */
+	0x09, 0x30,         /*          Usage (X),                      */
+	0x27, UCLOGIC_RDESC_PEN_PH(X_LM),
+						          /*          Logical Maximum (PLACEHOLDER),  */
+	0x47, UCLOGIC_RDESC_PEN_PH(X_PM),
+						          /*          Physical Maximum (PLACEHOLDER), */
+	0x81, 0x02,         /*          Input (Variable),               */
+	0x09, 0x31,         /*          Usage (Y),                      */
+	0x27, UCLOGIC_RDESC_PEN_PH(Y_LM),
+						          /*          Logical Maximum (PLACEHOLDER),  */
+	0x47, UCLOGIC_RDESC_PEN_PH(Y_PM),
+						          /*          Physical Maximum (PLACEHOLDER), */
+	0x81, 0x02,         /*          Input (Variable),               */
+	0xB4,               /*          Pop,                            */
+	0x09, 0x30,         /*          Usage (Tip Pressure),           */
+	0x27, UCLOGIC_RDESC_PEN_PH(PRESSURE_LM),
+						/*          Logical Maximum (PLACEHOLDER),  */
+	0x81, 0x02,         /*          Input (Variable),               */
+	0xA4,               /*          Push,                           */
+	0x54,               /*          Unit Exponent (0),              */
+	0x65, 0x14,         /*          Unit (Degrees),                 */
+	0x35, 0xC3,         /*          Physical Minimum (-61),         */
+	0x45, 0x3C,         /*          Physical Maximum (60),          */
+	0x15, 0xC3,         /*          Logical Minimum (-61),          */
+	0x25, 0x3C,         /*          Logical Maximum (60),           */
+	0x75, 0x08,         /*          Report Size (8),                */
+	0x95, 0x02,         /*          Report Count (2),               */
+	0x09, 0x3D,         /*          Usage (X Tilt),                 */
+	0x09, 0x3E,         /*          Usage (Y Tilt),                 */
+	0x81, 0x02,         /*          Input (Variable),               */
+	0xB4,               /*          Pop,                            */
+	0x75, 0x08,         /*          Report Size (8),                */
+	0x95, 0x02,         /*          Report Count (2),               */
+	0x81, 0x01,         /*          Input (Constant),               */
+	0xC0,               /*      End Collection,                     */
+	0xC0                /*  End Collection                          */
+};
 ```
 
 ## USB Packets - Interface 2 with "Key"
